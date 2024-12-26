@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timeline of Humanity</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Roboto", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eef2f5;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #1e3d59;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .timeline {
+      display: flex;
+      overflow-x: auto;
+      padding: 20px;
+      scroll-behavior: smooth;
+      gap: 15px;
+    }
+
+    .event {
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      padding: 20px;
+      margin: 0 5px;
+      min-width: 320px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .event:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .event h2 {
+      margin: 0 0 10px;
+      color: #1e3d59;
+      font-size: 1.5em;
+    }
+
+    .event p {
+      margin: 0;
+      color: #555;
+      font-size: 1em;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    .buttons button {
+      background-color: #1e3d59;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .buttons button:hover {
+      background-color: #3c9a9f;
+      transform: translateY(-3px);
+    }
+
+    .info {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #444;
+      padding: 10px 20px;
+      line-height: 1.5;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .def {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: larger;
+    }
+    /* Prabhansh Mishra */
+  </style>
+</head>
+
+<body>
+  <header>Timeline of Humanity</header>
+  <center>
+    <p class="def">
+      Get to know about the timeline of humanity discussing it's key events.
+    </p>
+  </center>
+  <footer>Source : <a href="https://www.wikipedia.org/">Wikipedia</a></footer>
+  <div class="timeline" id="timeline">
+    <div class="event"
+      onclick="showDetails('The discovery of fire refers to the moment in human history when early humans first gained the ability to intentionally create and control fire, likely through the process of rubbing sticks together or striking stones, which allowed them to use fire for warmth, cooking, protection, and other purposes, marking a pivotal step in human evolution and development of civilization; this is considered one of the most significant technological advancements in early human history.')">
+      <h2>Discovery of Fire</h2>
+      <p>1.7 Million Years Ago</p>
+    </div>
+    <div class="event"
+      onclick="showDetails('Stone tools are pieces of rock that are shaped and used for various tasks, such as cutting, hunting, and gathering. They were a significant technological advancement in the Paleolithic Age, and were used by humans up to the present day.')">
+      <h2>Stone Tools</h2>
+      <p>2.5 Million Years Ago</p>
+    </div>
+    <div class="event"
+      onclick="showDetails('Agriculture is the practice of growing crops and raising animals for food and other products. The word comes from the Latin words agri, meaning field, and cultura, meaning cultivation')">
+      <h2>Agriculture</h2>
+      <p>10,000 BCE</p>
+    </div>
+    <div class="event"
+      onclick="showDetails('The wheel was invented in Mesopotamia, though the exact inventor is unknown. The wheel was likely invented after humans began using cylindrical tree trunks to move heavy objects. The first wheels were wooden disks made of three planks held together by struts. The wheel was originally used for pottery, but was later used for transportation, agriculture, and other purposes.')">
+      <h2>Invention of the Wheel</h2>
+      <p>3,500 BCE</p>
+    </div>
+    <div class="event"
+      onclick="showDetails('A printing press is a machine that uses ink to transfer text and images onto paper or other materials. The printing press was invented in Europe by Johannes Gutenberg, a German craftsman.')">
+      <h2>Printing Press</h2>
+      <p>1440 CE</p>
+    </div>
+    <div class="event"
+      onclick="showDetails('The Wright brothers, Orville Wright August 19, 1871  January 30, 1948 and Wilbur Wright April 16, 1867  May 30, 1912, were American aviation pioneers generally credited with inventing, building, and flying the world’s first successful airplane.')">
+      <h2>Wright Brothers</h2>
+      <p>1903 CE</p>
+    </div>
+    <!-- Prabhansh Mishra -->
+    <div class="event"
+      onclick="showDetails('A Moon landing or lunar landing is the arrival of a spacecraft on the surface of the Moon, including both crewed and robotic missions. The first human-made object to touch the Moon was Luna 2 in 1959.')">
+      <h2>Moon Landing</h2>
+      <p>1969 CE</p>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="scrollTimeline(-300)">◀ Previous</button>
+    <button onclick="scrollTimeline(300)">Next ▶</button>
+  </div>
+
+  <div class="info" id="info">Click on an event to learn more!</div>
+  <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
+  <center><footer>Made by: Prabhansh Mishra (7G)</footer> </center>
+  <script>
+    const timeline = document.getElementById("timeline");
+    const info = document.getElementById("info");
+
+    function scrollTimeline(amount) {
+      timeline.scrollBy({ left: amount, behavior: "smooth" });
+    }
+
+    function showDetails(details) {
+      info.textContent = details;
+    
+    }
+   
+    // Prabhansh Mishra
+  </script>
+</body>
+
+</html>
